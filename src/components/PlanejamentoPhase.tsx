@@ -83,7 +83,7 @@ const PlanejamentoPhase = ({ sdiState, setSdiState }: Props) => {
           <CollapsibleContent>
             <CardContent className="space-y-4 text-sm text-gray-700">
               <p className="font-medium text-blue-900">
-                <strong>Sequência Didática Interativa (SDI)</strong> é uma metodologia dialógico-hermenêutica, esenvolvida por Maria Marly de Oliveira e estruturada em <strong>3 etapas</strong>. Cada fase possui uma função pedagógica específica:
+                <strong>Sequência Didática Interativa (SDI)</strong> é uma metodologia dialógico-hermenêutica, desenvolvida por Maria Marly de Oliveira e estruturada em <strong>3 etapas</strong>. Cada fase possui uma função pedagógica específica:
               </p>
               
               <div className="grid gap-4 md:grid-cols-2">
