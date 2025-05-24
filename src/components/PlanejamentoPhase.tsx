@@ -74,7 +74,7 @@ const PlanejamentoPhase = ({ sdiState, setSdiState }: Props) => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
                   <Lightbulb className="h-6 w-6 text-blue-600" />
-                  <CardTitle className="text-blue-900">Sequência Didática Interativa (SDI): Guia Completo e Prático</CardTitle>
+                  <CardTitle className="text-blue-900">Sequência Didática Interativa (SDI): Guia Prático</CardTitle>
                 </div>
                 <ChevronDown className={`h-5 w-5 text-blue-600 transition-transform ${isInfoOpen ? 'rotate-180' : ''}`} />
               </div>
@@ -83,7 +83,7 @@ const PlanejamentoPhase = ({ sdiState, setSdiState }: Props) => {
           <CollapsibleContent>
             <CardContent className="space-y-4 text-sm text-gray-700">
               <p className="font-medium text-blue-900">
-                <strong>Sequência Didática Interativa (SDI)</strong> é uma metodologia dialógico-hermenêutica, desenvolvida por Maria Marly de Oliveira e estruturada em <strong>3 etapas</strong>. Cada fase possui uma função pedagógica específica:
+                A SDI, desenvolvida por Maria Marly de Oliveira, é uma proposta didático-metodológica com abordagem dialógico-hermenêutica, estruturada em etapas com funções pedagógicas específicas:
               </p>
               
               <div className="grid gap-4 md:grid-cols-2">
