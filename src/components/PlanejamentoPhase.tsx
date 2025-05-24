@@ -74,7 +74,7 @@ const PlanejamentoPhase = ({ sdiState, setSdiState }: Props) => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
                   <Lightbulb className="h-6 w-6 text-blue-600" />
-                  <CardTitle className="text-blue-900">O que é a SDI? / Como funciona?</CardTitle>
+                  <CardTitle className="text-blue-900">Sequência Didática Interativa (SDI): Guia Completo e Prático</CardTitle>
                 </div>
                 <ChevronDown className={`h-5 w-5 text-blue-600 transition-transform ${isInfoOpen ? 'rotate-180' : ''}`} />
               </div>
@@ -83,7 +83,7 @@ const PlanejamentoPhase = ({ sdiState, setSdiState }: Props) => {
           <CollapsibleContent>
             <CardContent className="space-y-4 text-sm text-gray-700">
               <p className="font-medium text-blue-900">
-                <strong>Sequência Didática Interativa (SDI)</strong> é uma metodologia dialógico-hermenêutica estruturada em <strong>3 etapas</strong>. Cada fase possui uma função pedagógica específica:
+                <strong>Sequência Didática Interativa (SDI)</strong> é uma metodologia dialógico-hermenêutica, esenvolvida por Maria Marly de Oliveira e estruturada em <strong>3 etapas</strong>. Cada fase possui uma função pedagógica específica:
               </p>
               
               <div className="grid gap-4 md:grid-cols-2">
@@ -105,7 +105,7 @@ const PlanejamentoPhase = ({ sdiState, setSdiState }: Props) => {
                   <div className="flex items-start space-x-2">
                     <Badge className="mt-0.5 bg-blue-600">2</Badge>
                     <div>
-                      <strong>Discussão em subgrupos</strong> — grupos de 4–5 participantes confrontam percepções e constroem uma síntese provisória.
+                      <strong>Discussão em subgrupos</strong> — grupos de 3–5 participantes confrontam percepções e constroem uma síntese provisória.
                     </div>
                   </div>
                 </div>
@@ -114,14 +114,14 @@ const PlanejamentoPhase = ({ sdiState, setSdiState }: Props) => {
                   <div className="flex items-start space-x-2">
                     <Badge className="mt-0.5 bg-purple-600">3</Badge>
                     <div>
-                      <strong>Reunião de líderes</strong> — representantes negociam uma versão preliminar, enquanto os colegas refinam exemplos.
+                      <strong>Reunião de líderes</strong> — representantes negociam uma versão preliminar, onde apresentam e discutem as sínteses de seus grupos de origem.
                     </div>
                   </div>
                   
                   <div className="flex items-start space-x-2">
                     <Badge variant="outline" className="mt-0.5">Final</Badge>
                     <div>
-                      <strong>Síntese coletiva & Aprofundamento teórico</strong> — a turma analisa e valida a proposta, visualizando a evolução conceitual.
+                      <strong>Síntese coletiva & Aprofundamento teórico</strong> — a definição/síntese geral construída pelos líderes é apresentada e discutida com toda a turma.
                     </div>
                   </div>
                 </div>
