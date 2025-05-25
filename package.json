@@ -1,7 +1,10 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "sdi-project",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Aplicação web para condução de Sequências Didáticas Interativas baseada na metodologia de Maria Marly de Oliveira",
+  "author": "Massaro Victor",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",

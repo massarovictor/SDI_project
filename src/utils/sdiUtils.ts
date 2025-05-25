@@ -158,7 +158,9 @@ export const gerarPdfFichas = (prof: string, disc: string, pergunta: string, n: 
 };
 
 // Create final report PDF
-export function gerarRelatorioFinal(sdiState: any) {
+import { SDIState } from '@/types/sdi';
+
+export function gerarRelatorioFinal(sdiState: SDIState) {
   try {
     const pdf = new jsPDF();
     

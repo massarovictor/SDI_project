@@ -5,12 +5,9 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BookOpen, ArrowRight, Lightbulb, Users, Target } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 
-interface Props {
-  sdiState: any;
-  setSdiState: (state: any) => void;
-}
+import { SDIProps } from '@/types/sdi';
 
-const TheoreticalPhase = ({ sdiState, setSdiState }: Props) => {
+const TheoreticalPhase = ({ sdiState, setSdiState }: SDIProps) => {
   const handleNext = () => {
     setSdiState({
       ...sdiState,

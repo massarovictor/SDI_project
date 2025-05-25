@@ -4,13 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { User, Clock, ArrowRight, PenTool } from 'lucide-react';
 import { cronocolor } from '@/utils/sdiUtils';
+import { SDIProps } from '@/types/sdi';
 
-interface Props {
-  sdiState: any;
-  setSdiState: (state: any) => void;
-}
-
-const IndividualPhase = ({ sdiState, setSdiState }: Props) => {
+const IndividualPhase = ({ sdiState, setSdiState }: SDIProps) => {
   const [timeLeft, setTimeLeft] = useState(0);
 
   useEffect(() => {
@@ -97,7 +93,7 @@ const IndividualPhase = ({ sdiState, setSdiState }: Props) => {
               <div>
                 <h4 className="font-medium text-green-900">Registre suas ideias iniciais</h4>
                 <p className="text-sm text-green-700">
-                  Antes de qualquer debate em grupo, escreva seus pensamentos sobre o tema.
+                  Antes de qualquer discussão em grupo, escreva seus pensamentos sobre o tema.
                 </p>
               </div>
             </div>
@@ -107,7 +103,7 @@ const IndividualPhase = ({ sdiState, setSdiState }: Props) => {
               <div>
                 <h4 className="font-medium text-green-900">Ponto de partida autêntico</h4>
                 <p className="text-sm text-green-700">
-                  Este registro permitirá comparar como seu entendimento evoluirá.
+                  Este registro servirá de referência para acompanhar a evolução do seu entendimento.
                 </p>
               </div>
             </div>

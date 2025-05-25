@@ -1,23 +1,21 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { FileText, ArrowRight, Lightbulb, Users } from 'lucide-react';
+import { SDIProps } from '@/types/sdi';
 
-interface Props {
-  sdiState: any;
-  setSdiState: (state: any) => void;
-}
-
-const FinalSynthesisPhase = ({ sdiState, setSdiState }: Props) => {
+const FinalSynthesisPhase = ({ sdiState, setSdiState }: SDIProps) => {
   const handleNext = () => {
     setSdiState({
       ...sdiState,
       fase: 7
     });
   };
+
+  // Verifica se há clusters formados
+  const hasClusters = sdiState.clusters && sdiState.clusters.length > 1;
 
   return (
     <div className="max-w-4xl mx-auto space-y-8">
@@ -32,13 +30,26 @@ const FinalSynthesisPhase = ({ sdiState, setSdiState }: Props) => {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
+          {hasClusters && (
+            <div className="bg-amber-50 rounded-lg p-4 border border-amber-200">
+              <h4 className="font-medium text-amber-900 mb-3">⚠️ Clusters Identificados - {sdiState.clusters.length} clusters formados</h4>
+              <p className="text-amber-800 text-sm mb-3">
+                Você pode registrar a síntese de duas formas:
+              </p>
+              <ul className="text-amber-800 text-sm space-y-1 ml-4">
+                <li>• <strong>Resposta única:</strong> Unifique as sínteses dos clusters em uma definição consensual</li>
+                <li>• <strong>Respostas diferentes:</strong> Registre as sínteses específicas de cada cluster separadamente</li>
+              </ul>
+            </div>
+          )}
+          
           <div className="grid gap-4 md:grid-cols-2">
             <div className="flex items-start space-x-3">
               <Users className="h-5 w-5 text-orange-600 mt-1 flex-shrink-0" />
               <div>
                 <h4 className="font-medium text-orange-900">Unificação das sínteses</h4>
                 <p className="text-sm text-orange-700">
-                  Combine as definições dos clusters em uma versão unificada.
+                  Combine as definições em uma versão unificada.
                 </p>
               </div>
             </div>
@@ -75,7 +86,7 @@ const FinalSynthesisPhase = ({ sdiState, setSdiState }: Props) => {
               id="sintese"
               value={sdiState.sintese}
               onChange={(e) => setSdiState({ ...sdiState, sintese: e.target.value })}
-              placeholder="Registre aqui a definição unificada que representa o consenso da turma..."
+              placeholder="Registre aqui a definição unificada que representa o consenso da turma. Em caso de clusters, você pode registrar um consenso entre todos ou as respostas diferentes de cada cluster..."
               rows={8}
               className="mt-2 border-orange-200 focus:border-orange-400"
             />

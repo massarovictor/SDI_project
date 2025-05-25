@@ -5,12 +5,9 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Users, Vote, ArrowRight, Target } from 'lucide-react';
 
-interface Props {
-  sdiState: any;
-  setSdiState: (state: any) => void;
-}
+import { SDIProps } from '@/types/sdi';
 
-const GroupOrganizationPhase = ({ sdiState, setSdiState }: Props) => {
+const GroupOrganizationPhase = ({ sdiState, setSdiState }: SDIProps) => {
   const handleNext = () => {
     setSdiState({
       ...sdiState,

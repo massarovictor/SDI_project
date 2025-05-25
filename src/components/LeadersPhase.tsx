@@ -5,14 +5,9 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Crown, Clock, ArrowRight, Users, Target } from 'lucide-react';
 import { cronocolor } from '@/utils/sdiUtils';
+import { LeadersPhaseProps } from '@/types/sdi';
 
-interface Props {
-  sdiState: any;
-  setSdiState: (state: any) => void;
-  isActive?: boolean;
-}
-
-const LeadersPhase = ({ sdiState, setSdiState, isActive = false }: Props) => {
+const LeadersPhase = ({ sdiState, setSdiState, isActive = false }: LeadersPhaseProps) => {
   const [timeLeft, setTimeLeft] = useState(0);
 
   useEffect(() => {

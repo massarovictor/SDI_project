@@ -4,13 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Users, Clock, ArrowRight, MessageSquare, Lightbulb } from 'lucide-react';
 import { cronocolor } from '@/utils/sdiUtils';
+import { SDIProps } from '@/types/sdi';
 
-interface Props {
-  sdiState: any;
-  setSdiState: (state: any) => void;
-}
-
-const GroupPhase = ({ sdiState, setSdiState }: Props) => {
+const GroupPhase = ({ sdiState, setSdiState }: SDIProps) => {
   const [timeLeft, setTimeLeft] = useState(0);
 
   useEffect(() => {

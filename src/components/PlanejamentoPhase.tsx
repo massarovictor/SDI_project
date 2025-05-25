@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -11,16 +10,25 @@ import { AlertCircle, Clock, Users, Download, Play, ChevronDown, Lightbulb } fro
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { toast } from 'sonner';
 import { formarGruposEClusters, gerarPdfFichas } from '@/utils/sdiUtils';
+import { SDIProps } from '@/types/sdi';
 
-interface Props {
-  sdiState: any;
-  setSdiState: (state: any) => void;
-}
-
-const PlanejamentoPhase = ({ sdiState, setSdiState }: Props) => {
+const PlanejamentoPhase = ({ sdiState, setSdiState }: SDIProps) => {
   const [isInfoOpen, setIsInfoOpen] = React.useState(false);
+  const [showValidation, setShowValidation] = React.useState(false);
 
   const handleGenerateGroups = () => {
+    setShowValidation(true);
+    
+    // Validação dos campos obrigatórios
+    if (!sdiState.prof.trim()) {
+      toast.error("Por favor, preencha o nome do professor(a)");
+      return;
+    }
+    if (!sdiState.disc.trim()) {
+      toast.error("Por favor, preencha o nome da disciplina");
+      return;
+    }
+    
     try {
       const { sizes, grupos, clusters } = formarGruposEClusters(sdiState.n);
       setSdiState({
@@ -36,6 +44,18 @@ const PlanejamentoPhase = ({ sdiState, setSdiState }: Props) => {
   };
 
   const handleDownloadPdf = () => {
+    setShowValidation(true);
+    
+    // Validação dos campos obrigatórios
+    if (!sdiState.prof.trim()) {
+      toast.error("Por favor, preencha o nome do professor(a)");
+      return;
+    }
+    if (!sdiState.disc.trim()) {
+      toast.error("Por favor, preencha o nome da disciplina");
+      return;
+    }
+    
     try {
       gerarPdfFichas(sdiState.prof, sdiState.disc, sdiState.q, sdiState.n);
       toast.success("Fichas PDF geradas com sucesso!");
@@ -45,6 +65,17 @@ const PlanejamentoPhase = ({ sdiState, setSdiState }: Props) => {
   };
 
   const handleStartSDI = () => {
+    setShowValidation(true);
+    
+    // Validação dos campos obrigatórios
+    if (!sdiState.prof.trim()) {
+      toast.error("Por favor, preencha o nome do professor(a)");
+      return;
+    }
+    if (!sdiState.disc.trim()) {
+      toast.error("Por favor, preencha o nome da disciplina");
+      return;
+    }
     if (!sdiState.q.trim()) {
       toast.error("Por favor, defina a pergunta hermenêutica");
       return;
@@ -62,7 +93,7 @@ const PlanejamentoPhase = ({ sdiState, setSdiState }: Props) => {
     toast.success("SDI iniciada!");
   };
 
-  const canStart = sdiState.q.trim() && sdiState.grupos.length > 0;
+  const canStart = sdiState.prof.trim() && sdiState.disc.trim() && sdiState.q.trim() && sdiState.grupos.length > 0;
 
   return (
     <div className="space-y-8">
@@ -142,22 +173,26 @@ const PlanejamentoPhase = ({ sdiState, setSdiState }: Props) => {
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
-              <Label htmlFor="prof">Professor(a)</Label>
+              <Label htmlFor="prof">Professor(a) *</Label>
               <Input
                 id="prof"
                 value={sdiState.prof}
                 onChange={(e) => setSdiState({ ...sdiState, prof: e.target.value })}
                 placeholder="Nome do professor"
+                required
+                className={showValidation && !sdiState.prof.trim() ? "border-red-300 focus:border-red-500" : ""}
               />
             </div>
             
             <div>
-              <Label htmlFor="disc">Disciplina</Label>
+              <Label htmlFor="disc">Disciplina *</Label>
               <Input
                 id="disc"
                 value={sdiState.disc}
                 onChange={(e) => setSdiState({ ...sdiState, disc: e.target.value })}
                 placeholder="Nome da disciplina"
+                required
+                className={showValidation && !sdiState.disc.trim() ? "border-red-300 focus:border-red-500" : ""}
               />
             </div>
             

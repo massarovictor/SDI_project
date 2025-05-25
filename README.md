@@ -1,73 +1,202 @@
-# Welcome to your Lovable project
+# 📚 SDI Project - Sequência Didática Interativa
 
-## Project info
+Uma aplicação web moderna para condução de Sequências Didáticas Interativas, baseada na metodologia desenvolvida por **Maria Marly de Oliveira**.
 
-**URL**: https://lovable.dev/projects/3a9c7a89-abd4-4a45-ab1d-749f9ff27b34
+![SDI Project](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![React](https://img.shields.io/badge/React-18.3.1-blue.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-blue.svg)
+![Vite](https://img.shields.io/badge/Vite-5.4.1-purple.svg)
 
-## How can I edit this code?
+## 🎯 Sobre o Projeto
 
-There are several ways of editing your application.
+A SDI (Sequência Didática Interativa) é uma proposta didático-metodológica com abordagem dialógico-hermenêutica, estruturada em etapas com funções pedagógicas específicas. Esta aplicação facilita a implementação dessa metodologia em ambientes educacionais.
 
-**Use Lovable**
+### ✨ Funcionalidades Principais
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3a9c7a89-abd4-4a45-ab1d-749f9ff27b34) and start prompting.
+- ✅ **Formação automática de grupos** - Algoritmo inteligente para grupos equilibrados de 4-5 participantes
+- ✅ **Sistema de clusterização** - Para turmas grandes (>5 grupos)
+- ✅ **Cronômetros integrados** - Controle de tempo flexível para cada fase
+- ✅ **Geração de fichas PDF** - Fichas personalizadas para os participantes
+- ✅ **Relatórios completos** - Documentação automática do processo
+- ✅ **Interface responsiva** - Funciona em desktop, tablet e mobile
+- ✅ **Persistência local** - Dados salvos automaticamente no navegador
+- ✅ **Error Boundary** - Tratamento robusto de erros
+- ✅ **Guia integrado da metodologia SDI**
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚀 As 8 Fases da SDI
 
-**Use your preferred IDE**
+1. **Planejamento** - Escolha do tema e formulação da pergunta hermenêutica
+2. **Trabalho Individual** - Registro inicial das concepções de cada estudante
+3. **Formação dos Grupos** - Grupos formados aleatoriamente a partir dos números das fichas
+4. **Síntese em Grupo** - Discussão interna para elaborar uma síntese parcial
+5. **Reunião de Líderes** - Negociação entre líderes eleitos democraticamente
+6. **Síntese dos Líderes** - Apresentação da síntese integrada à turma
+7. **Síntese Final** - Construção coletiva da resposta consensual
+8. **Aprofundamento Teórico** - Consulta a fontes da literatura e fundamentação final
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🛠️ Tecnologias Utilizadas
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Frontend
+- **React 18.3.1** - Biblioteca para interfaces de usuário
+- **TypeScript 5.5.3** - Superset tipado do JavaScript
+- **Vite 5.4.1** - Build tool e dev server
+- **Tailwind CSS 3.4.11** - Framework CSS utilitário
 
-Follow these steps:
+### UI Components
+- **shadcn/ui** - Componentes de interface modernos
+- **Radix UI** - Primitivos de UI acessíveis
+- **Lucide React** - Ícones SVG
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Funcionalidades
+- **jsPDF** - Geração de documentos PDF
+- **React Router DOM** - Roteamento SPA
+- **Sonner** - Sistema de notificações
+- **React Query** - Gerenciamento de estado servidor
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 📦 Instalação e Uso
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Pré-requisitos
+- Node.js 18+ 
+- npm ou yarn
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Instalação
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/sdi-project.git
+
+# Entre no diretório
+cd sdi-project
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Scripts Disponíveis
+```bash
+# Desenvolvimento
+npm run dev
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+# Build para produção
+npm run build
 
-**Use GitHub Codespaces**
+# Preview da build
+npm run preview
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Linting
+npm run lint
+```
 
-## What technologies are used for this project?
+## 🌐 Deploy
 
-This project is built with:
+### Vercel (Recomendado)
+```bash
+# Instale a CLI da Vercel
+npm i -g vercel
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+# Deploy
+vercel
+```
 
-## How can I deploy this project?
+### Netlify
+```bash
+# Build
+npm run build
 
-Simply open [Lovable](https://lovable.dev/projects/3a9c7a89-abd4-4a45-ab1d-749f9ff27b34) and click on Share -> Publish.
+# Upload da pasta dist/
+```
 
-## Can I connect a custom domain to my Lovable project?
+### GitHub Pages
+```bash
+# Configure o base no vite.config.ts
+base: '/nome-do-repositorio/'
 
-Yes, you can!
+# Build e deploy
+npm run build
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📁 Estrutura do Projeto
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```
+src/
+├── components/          # Componentes React
+│   ├── ui/             # Componentes de UI (shadcn)
+│   ├── ErrorBoundary.tsx
+│   ├── PlanejamentoPhase.tsx
+│   ├── IndividualPhase.tsx
+│   ├── GroupPhase.tsx
+│   ├── LeadersPhase.tsx
+│   ├── FinalSynthesisPhase.tsx
+│   ├── TheoreticalPhase.tsx
+│   └── CompletionPhase.tsx
+├── pages/              # Páginas da aplicação
+│   ├── LandingPage.tsx
+│   ├── Index.tsx
+│   └── NotFound.tsx
+├── types/              # Definições TypeScript
+│   └── sdi.ts
+├── utils/              # Funções utilitárias
+│   └── sdiUtils.ts
+├── hooks/              # Custom hooks
+└── lib/                # Configurações e utilitários
+```
+
+## 🎨 Customização
+
+### Cores e Tema
+As cores podem ser customizadas no arquivo `src/index.css` através das variáveis CSS:
+
+```css
+:root {
+  --primary: 220 90% 56%;
+  --secondary: 220 14.3% 95.9%;
+  /* ... outras variáveis */
+}
+```
+
+### Algoritmo de Grupos
+O algoritmo de formação de grupos pode ser ajustado em `src/utils/sdiUtils.ts`:
+
+```typescript
+export function grupos4e5(n: number): number[] {
+  // Lógica personalizada aqui
+}
+```
+
+## 🤝 Contribuição
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 👨‍💻 Autor
+
+**Massaro Victor**
+- GitHub: [@massarovictor](https://github.com/massarovictor)
+- Email: massarovictor@email.com
+
+## 📚 Metodologia SDI
+
+A metodologia SDI foi desenvolvida por **Maria Marly de Oliveira** e se baseia em uma abordagem dialógico-hermenêutica que promove:
+
+- 🎯 **Construção coletiva do conhecimento**
+- 🤝 **Aprendizagem colaborativa**
+- 💭 **Desenvolvimento do pensamento crítico**
+- 🗣️ **Habilidades de comunicação e argumentação**
+- 🔄 **Processo democrático de tomada de decisões**
+
+## ⚠️ Nota Importante
+
+Esta aplicação é uma ferramenta de apoio à metodologia SDI e deve ser utilizada em conjunto com o conhecimento pedagógico adequado sobre a sequência didática interativa.
+
+---
+
+Desenvolvido com ❤️ para a educação brasileira

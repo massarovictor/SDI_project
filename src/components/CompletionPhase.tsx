@@ -6,13 +6,9 @@ import { Badge } from '@/components/ui/badge';
 import { CheckCircle, RotateCcw, Download, Trophy, Users, Clock, Target, FileText } from 'lucide-react';
 import { gerarRelatorioFinal } from '@/utils/sdiUtils';
 import { toast } from 'sonner';
+import { SDIProps, initialSDIState } from '@/types/sdi';
 
-interface Props {
-  sdiState: any;
-  setSdiState: (state: any) => void;
-}
-
-const CompletionPhase = ({ sdiState, setSdiState }: Props) => {
+const CompletionPhase = ({ sdiState, setSdiState }: SDIProps) => {
   useEffect(() => {
     // Record end time when component mounts
     if (!sdiState.end) {
@@ -22,27 +18,14 @@ const CompletionPhase = ({ sdiState, setSdiState }: Props) => {
     // Trigger confetti effect
     const timer = setTimeout(() => {
       // You could add a confetti library here
-      console.log("🎉 SDI Completed!");
+      // SDI Completed successfully
     }, 500);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [sdiState, setSdiState]);
 
   const handleRestart = () => {
-    setSdiState({
-      fase: 0,
-      prof: "",
-      disc: "",
-      q: "",
-      n: 25,
-      dur: [300, 600, 480],
-      sizes: [],
-      grupos: [],
-      clusters: [],
-      start: null,
-      end: null,
-      sintese: ""
-    });
+    setSdiState(initialSDIState);
   };
 
   const handleDownloadReport = () => {
