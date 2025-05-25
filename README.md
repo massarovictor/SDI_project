@@ -181,7 +181,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 **Massaro Victor**
 - GitHub: [@massarovictor](https://github.com/massarovictor)
-- Email: massarovictor@email.com
+- Email: victormassaro00@gmail.com
 
 ## 📚 Metodologia SDI
 
@@ -199,4 +199,4 @@ Esta aplicação é uma ferramenta de apoio à metodologia SDI e deve ser utiliz
 
 ---
 
-Desenvolvido com ❤️ para a educação brasileira
+Desenvolvido com ❤️ para a Educação Brasileira
